@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Sample.Models.Product>
+
+<table class="table">
+        <tr>
+            <th> @Html.DisplayNameFor(model => model.image)</th>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Maker)</th>
+            <th>@Html.DisplayNameFor(model => model.Title)</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img src="@item.image" style="width:20px;height:20px;" /></td>
+                <td>@Html.DisplayFor(model => item.Id)   </td>
+                <td>@Html.DisplayFor(model => item.Maker)</td>
+                <td>@Html.DisplayFor(model => item.Title)</td>
+            </tr>
+        }
+
+    </table>
+
+@*@if (Model.Count() > 0)
+{
+    int counter = 0;
+    foreach (var product in Model)
+    {
+        if (counter % 3 == 0 || counter == 0)
+        {
+    <div class="row">
+        }
+
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-img">
+                    <img src='@product.image' />
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @product.Title
+                    </h5>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+
+                    </small>
+                </div>
+            </div>
+        </div>
+        if (counter % 3 == 0 || counter == 0)
+        {
+    </div>
+        }
+        @counter=counter++;
+
+    }
+}*@
+
